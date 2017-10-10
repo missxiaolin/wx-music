@@ -1,0 +1,4 @@
+<!--pages/cs/cs.wxml-->
+<view>
+    <button catchtap="chooseImageTap">上传图片</button>
+</view>
