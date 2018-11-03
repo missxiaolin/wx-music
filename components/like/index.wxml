@@ -1,2 +1,4 @@
-<!--components/like/index.wxml-->
-<text>components/like/index.wxml</text>
+<view class="container" bind:tap="onLike">
+  <image src="{{like?yes_url:no_url}}" />
+   <text>{{count}}</text> 
+</view>
