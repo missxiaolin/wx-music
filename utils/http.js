@@ -1,4 +1,4 @@
-import { config } from '/config.js'
+import { config } from '../config.js'
 class HTTP {
     request (params) {
         wx.request({
@@ -10,10 +10,10 @@ class HTTP {
             method: params.method ? params.method : 'POST',
             dataType: 'json',
             success: function(res) {
-
+                let code = res.statusCode
             },
             fail: function(res) {
-                
+
             },
         })
     }
