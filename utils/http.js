@@ -12,11 +12,12 @@ class HTTP {
             },
             method: params.method ? params.method : 'POST',
             dataType: 'json',
-            success: function(res) {
+            success: (res) => {
                 let code = res.statusCode
+                params.success(res)
             },
             fail: function(res) {
-
+                params.fail(res)
             },
         })
     }
