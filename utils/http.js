@@ -1,6 +1,9 @@
-import { config } from '../config.js'
+import {
+    config
+} from '../config.js'
+
 class HTTP {
-    request (params) {
+    request(params) {
         wx.request({
             url: config.api_blink_url + params.url,
             data: params.data,
