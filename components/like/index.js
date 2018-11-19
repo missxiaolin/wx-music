@@ -4,7 +4,10 @@ Component({
      * 组件的属性列表
      */
     properties: {
-        like: Boolean,
+        like: {
+            type: Boolean,
+            observer: function(newVal, oldVal, changedPath) {}
+        },
         count: Number,
         readOnly: Boolean
     },
@@ -31,6 +34,10 @@ Component({
                 count: count,
                 like: !this.properties.like
             })
+            let behavior = this.properties.like ? 'like' : 'cancel'
+            this.triggerEvent('like', {
+                behavior: behavior
+            }, {})
         }
     }
 })
