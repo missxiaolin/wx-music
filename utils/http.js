@@ -5,7 +5,6 @@ import {
 class HTTP {
     constructor() {
         this.baseRestUrl = config.api_blink_url
-        super();        
     }
 
     request(params) {
