@@ -1,5 +1,11 @@
-// components/like/index.js
+import { classicBehavior } from './beh.js'
+
 Component({
+    /**
+     * ceshi
+     */
+    behaviors: [classicBehavior],
+
     /**
      * 组件的属性列表
      */
@@ -25,6 +31,8 @@ Component({
      */
     methods: {
         onLike: function(event) {
+            this.cs()
+            
             if (this.properties.readOnly) {
                 return
             }
