@@ -3,9 +3,14 @@ import {
 } from '../config.js'
 
 class HTTP {
+    constructor() {
+        this.baseRestUrl = config.api_blink_url
+        super();        
+    }
+
     request(params) {
         wx.request({
-            url: config.api_blink_url + params.url,
+            url: this.baseRestUrl + params.url,
             data: params.data,
             header: {
                 'content-type': 'application/json',
