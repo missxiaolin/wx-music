@@ -7,11 +7,12 @@ class MovieModel extends HTTP {
         super()
     }
 
-    getDetail(movieId, success) {
+    getDetail(movieId) {
         var params = {
             url: "/v2/movie/subject/" + movieId,
-            success: success
+            data: {}
+
         }
-        this.request(params)
+        return this.request(params)
     }
 }

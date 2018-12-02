@@ -7,21 +7,30 @@ class HTTP {
         this.baseRestUrl = config.api_blink_url
     }
 
-    request(params) {
+    request({
+        url,
+        data,
+        method
+    }) {
+        return new Promise((resolve, reject) => {
+            this._request(url, resolve, reject, data, method)
+        })
+    }
+
+    _request(url, resolve, reject, data, method) {
         wx.request({
-            url: this.baseRestUrl + params.url,
+            url: this.baseRestUrl + url,
             data: params.data,
             header: {
                 'content-type': 'application/json',
             },
-            method: params.method ? params.method : 'POST',
+            method: method ? method : 'POST',
             dataType: 'json',
             success: (res) => {
-                let code = res.statusCode
-                params.success(res)
+                resolve(res)
             },
             fail: function(res) {
-                params.fail(res)
+                reject()
             },
         })
     }
