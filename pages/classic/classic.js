@@ -1,4 +1,8 @@
 // pages/classic/classic.js
+
+import { Rule } from '../../models/rule.js'
+let rule = new Rule()
+
 Page({
     /**
      * 页面的初始数据
@@ -8,7 +12,9 @@ Page({
     },
 
     onLoad: function(options) {
-
+        rule.getDetail(1).then((res)=>{
+            console.log(res)
+        })
     },
 
     onLink: function(event) {

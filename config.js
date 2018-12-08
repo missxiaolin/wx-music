@@ -1,5 +1,5 @@
 const config = {
-    api_blink_url: "https://api.douban.com"
+    api_blink_url: "http://www.guaishou.com"
 }
 
 export { config } 

@@ -20,14 +20,14 @@ class HTTP {
     _request(url, resolve, reject, data, method) {
         wx.request({
             url: this.baseRestUrl + url,
-            data: params.data,
+            data: data,
             header: {
                 'content-type': 'application/json',
             },
             method: method ? method : 'POST',
             dataType: 'json',
             success: (res) => {
-                resolve(res)
+                resolve(res.data)
             },
             fail: function(res) {
                 reject()
@@ -35,3 +35,5 @@ class HTTP {
         })
     }
 }
+
+export { HTTP };

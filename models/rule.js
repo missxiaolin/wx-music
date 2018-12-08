@@ -2,17 +2,20 @@ import {
     HTTP
 } from '../utils/http.js'
 
-class MovieModel extends HTTP {
+class Rule extends HTTP {
     constructor() {
         super()
     }
 
     getDetail(movieId) {
         var params = {
-            url: "/v2/movie/subject/" + movieId,
+            url: `/applet/user/deposit/rule`,
+            method: 'POST',
             data: {}
 
         }
         return this.request(params)
     }
 }
+
+export { Rule }
